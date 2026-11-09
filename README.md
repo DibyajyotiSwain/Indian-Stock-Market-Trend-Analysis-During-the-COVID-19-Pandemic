@@ -4,7 +4,7 @@
 ### An Interactive Data Analytics Dashboard for Historical Stock Market Analysis
 
 <p align="center">
-  **IBCP Career-related Programme | Class XII**
+**DIBYAJYOTI SWAIN | IBCP Career-related Programme | Class XII**
 </p>
 
 ---
