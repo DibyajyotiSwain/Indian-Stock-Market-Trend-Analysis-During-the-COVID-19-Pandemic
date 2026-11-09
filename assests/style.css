@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #eef1f6;
+  --panel: #ffffff;
+  --ink: #1b2559;
+  --muted: #6b7490;
+  --line: #e3e7f0;
+  --saffron: #f28c28;
+  --green: #1a9b6c;
+  --red: #d9534f;
+  --blue: #3c5bd4;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+/* Tricolour stripe: the one memorable touch */
+.flag-stripe {
+  height: 6px;
+  background: linear-gradient(90deg, #f28c28 0 33.3%, #ffffff 33.3% 66.6%, #1a9b6c 66.6% 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.dashboard-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-title {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  margin: 8px 0 0;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.header-badge {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Sections */
+.section-head { margin: 44px 0 16px; }
+
+.section-title {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+}
+
+.section-description {
+  margin: 4px 0 0;
+  max-width: 70ch;
+  color: var(--muted);
+}
+
+/* KPI cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.kpi-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.kpi-card.accent { border-left-color: var(--saffron); }
+.kpi-card.gain   { border-left-color: var(--green); }
+.kpi-card.loss   { border-left-color: var(--red); }
+
+.kpi-label { color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+
+.kpi-value {
+  margin-top: 4px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.kpi-card.gain .kpi-value { color: var(--green); }
+.kpi-card.loss .kpi-value { color: var(--red); }
+
+.kpi-note { margin-top: 2px; color: var(--muted); font-size: 0.8rem; }
+
+/* Cards and grids */
+.dashboard-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  min-width: 0;
+}
+
+.card-title { font-weight: 700; font-size: 1rem; }
+
+.card-description { margin: 2px 0 8px; color: var(--muted); font-size: 0.88rem; }
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.two-column > .dashboard-card { margin-bottom: 0; }
+.two-column { margin-bottom: 16px; }
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.controls > .dashboard-card { margin-bottom: 0; }
+
+.chart { width: 100%; }
+
+/* Dropdowns */
+.dropdown { margin-top: 8px; font-size: 0.95rem; }
+
+/* Time range pills */
+.pills { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+.pills label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f6f8fc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pills label:has(input:checked) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.pills input { position: absolute; opacity: 0; pointer-events: none; }
+.pills label:has(input:focus-visible) { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* Notes */
+.notes { margin: 10px 0 0; padding-left: 20px; max-width: 75ch; }
+.notes li { margin-bottom: 6px; }
+
+/* Footer */
+.footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .two-column { grid-template-columns: 1fr; }
+  .dashboard-container { padding: 24px 16px 40px; }
+}
