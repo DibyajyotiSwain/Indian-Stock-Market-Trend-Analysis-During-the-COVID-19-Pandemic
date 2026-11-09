@@ -80,7 +80,6 @@ The complete cleaned CSV file is approximately 32 MB and is hosted separately to
 
 **PRESENTATION(PPT):** [https://drive.google.com/drive/folders/1pugHkHHPrg3KPThZ2rauUbIBLfl9fkcW]
 
-A smaller sample dataset can be included in this repository for testing and demonstration.
 
 ## 5. Methodology
 
@@ -158,26 +157,19 @@ Indian-Stock-Market-Analysis/
 │
 ├── app.py
 │
-├── data/
-│   └── README.md
-│
-├── sample_data/
-│   └── stock_data_sample.csv
-│
 ├── assets/
 │   └── style.css
 │
-├── screenshots/
+├── Screenshots/
 │   ├── dashboard-overview.png
 │   ├── stock-analysis.png
 │   └── risk-analysis.png
 │
 ├── requirements.txt
-├── .gitignore
-└── README.md
+└── README.md(With Dataset and Presentation Link)
 ```
 
-The complete cleaned dataset is stored externally rather than being committed to the standard Git repository.
+The complete cleaned dataset and PPT is stored externally rather than being committed to the standard Git repository.
 
 ## 10. Installation and Setup
 
